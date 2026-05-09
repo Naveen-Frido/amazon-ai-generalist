@@ -1,0 +1,57 @@
+.multi-angle-section {
+  background-color: var(--bg-card);
+}
+
+.multi-angle-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.main-angle {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.consistency-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.metric-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--bg-warm);
+  padding: 32px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.metric-icon {
+  color: var(--accent-gold);
+  background: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.metric-info h4 {
+  font-size: 1.1rem;
+  color: var(--accent-navy);
+  margin-bottom: 8px;
+}
+
+.metric-info p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+  .consistency-metrics {
+    grid-template-columns: 1fr;
+  }
+}

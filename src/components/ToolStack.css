@@ -1,0 +1,111 @@
+/* ─── ToolStack — icons right-aligned, tooltip on hover ─── */
+.tool-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  margin: 0 0 8px;
+  float: right;
+  position: relative;
+}
+
+.tool-stack__icons-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+/* ─── Individual tool: icon stacked above name ─── */
+.tool-stack__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  cursor: default;
+}
+
+/* ─── Logo ─── */
+.tool-stack__logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tool-stack--light .tool-stack__logo {
+  background: #f3f2f0;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  padding: 5px;
+}
+
+.tool-stack--dark .tool-stack__logo {
+  background: #ffffff;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  padding: 5px;
+}
+
+.tool-stack__item:hover .tool-stack__logo {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.14);
+}
+
+/* ─── Tool name below icon ─── */
+.tool-stack__name {
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.tool-stack--light .tool-stack__name {
+  color: var(--text-muted);
+}
+
+.tool-stack--dark .tool-stack__name {
+  color: rgba(255,255,255,0.55);
+}
+
+/* ─── Tooltip — hidden by default, shown on hover ─── */
+.tool-stack__tooltip {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--accent-navy);
+  color: #fff;
+  font-size: 0.76rem;
+  font-style: italic;
+  padding: 8px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.tool-stack__tooltip::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 24px;
+  width: 10px;
+  height: 10px;
+  background: var(--accent-navy);
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+
+.tool-stack:hover .tool-stack__tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}

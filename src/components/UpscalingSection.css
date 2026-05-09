@@ -1,0 +1,94 @@
+.upscaling-section {
+  background-color: #fff;
+}
+
+.upscaling-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.upscaling-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.upscaling-card {
+  padding: 40px 32px;
+  background: var(--bg-warm);
+}
+
+.upscaling-icon {
+  color: var(--accent-gold);
+  margin-bottom: 24px;
+}
+
+.upscaling-card h3 {
+  font-size: 1.25rem;
+  color: var(--accent-navy);
+  margin-bottom: 12px;
+}
+
+.upscaling-card p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.upscaling-workflow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-dark);
+  padding: 32px 48px;
+  border-radius: var(--radius-lg);
+  color: #fff;
+}
+
+.flow-step-h {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  text-align: center;
+}
+
+.flow-step-h h4 {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.flow-step-h span {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  font-family: monospace;
+}
+
+.flow-step-h.active h4 {
+  color: var(--accent-gold);
+}
+
+.flow-step-h.success h4 {
+  color: #4CAF50;
+}
+
+.flow-arrow-h {
+  color: rgba(255,255,255,0.2);
+  font-size: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .upscaling-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .upscaling-workflow {
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+  }
+  
+  .flow-arrow-h {
+    transform: rotate(90deg);
+  }
+}

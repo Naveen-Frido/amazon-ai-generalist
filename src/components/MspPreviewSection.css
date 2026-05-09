@@ -1,0 +1,159 @@
+/* Warm earthy tone — not navy blue */
+.msp-preview-section {
+  background-color: #F2EDE6;
+  padding: 80px 0;
+}
+
+.msp-preview-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(180, 150, 100, 0.08);
+}
+
+.msp-preview-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.msp-preview-card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent-navy);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: 'Outfit', sans-serif;
+}
+
+.msp-preview-card-badge {
+  background: var(--accent-navy);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.08em;
+}
+
+.msp-preview-card-text {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 28px;
+}
+
+.msp-preview-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-gold);
+  color: var(--bg-dark);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  letter-spacing: 0.02em;
+  font-family: 'Outfit', sans-serif;
+}
+
+.msp-preview-card-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+/* Modal */
+.msp-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeIn 0.2s ease;
+}
+
+.msp-modal {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 780px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+}
+
+.msp-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  flex-shrink: 0;
+  background: #f9f8f6;
+}
+
+.msp-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent-navy);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.msp-modal-close {
+  background: rgba(0,0,0,0.06);
+  border: none;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.msp-modal-close:hover {
+  background: rgba(0,0,0,0.1);
+  color: #000;
+}
+
+.msp-modal-body {
+  overflow-y: auto;
+  padding: 32px;
+  flex: 1;
+}
+
+.msp-modal-body::-webkit-scrollbar { width: 6px; }
+.msp-modal-body::-webkit-scrollbar-track { background: rgba(0,0,0,0.04); border-radius: 3px; }
+.msp-modal-body::-webkit-scrollbar-thumb { background: rgba(197, 168, 128, 0.5); border-radius: 3px; }
+
+.msp-full-text {
+  color: #2a2a2a;
+  font-family: 'Inter', monospace;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
