@@ -6,7 +6,7 @@ const steps = [
   { id: 1, icon: <SlidersHorizontal size={20} />, label: 'Requirement Gathering' },
   { id: 2, icon: <Sparkles size={20} />, label: 'Building MSP' },
   { id: 3, icon: <ImageIcon size={20} />, label: 'Action Prompt' },
-  { id: 4, icon: <Search size={20} />, label: 'Artifact Detection' },
+  { id: 4, icon: <Search size={20} />, label: 'Quality Analysis' },
   { id: 5, icon: <Wand2 size={20} />, label: 'Fix & Retouch' },
   { id: 6, icon: <CheckCircle size={20} />, label: 'Quality Control' },
   { id: 7, icon: <MonitorUp size={20} />, label: 'Upscale & Delivery' }
@@ -23,11 +23,11 @@ export default function Hero() {
         </div>
 
         <h1 className="hero-title animate-fade-in" style={{ animationDelay: '0.1s' }}>
-          Scalable AI Production <span className="highlight">Pipeline</span>
+          Scalable AI Workflow
         </h1>
 
         <p className="hero-subtitle animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          A structured production pipeline combining AI automation, prompt engineering, quality control, and manual refinement to create photorealistic, premium ecommerce visuals.
+          A structured pipeline combining AI automation, prompt engineering, quality control, and manual refinement to create photorealistic, premium ecommerce visuals.
         </p>
 
         <div className="hero-workflow-container animate-fade-in" style={{ animationDelay: '0.3s' }}>
@@ -41,7 +41,7 @@ export default function Hero() {
               </defs>
               {/* Loop from QC (Step 6) to Fix & Retouch (Step 5) */}
               <path className="loop-path" d="M 80% 100% C 75% 20%, 65% 20%, 60% 100%" />
-              {/* Loop from Artifact Detection (Step 4) to Action Prompt (Step 3) */}
+              {/* Loop from Quality Analysis (Step 4) to Action Prompt (Step 3) */}
               <path className="loop-path" d="M 52% 100% C 47% 20%, 37% 20%, 32% 100%" />
             </svg>
           </div>
@@ -49,7 +49,25 @@ export default function Hero() {
           <div className="hero-workflow">
             <div className="workflow-track"></div>
             {steps.map((step, idx) => (
-              <div key={idx} className="workflow-step">
+              <div 
+                key={idx} 
+                className="workflow-step"
+                onClick={() => {
+                  const el = document.getElementById(`step-${step.id}`);
+                  if (el) {
+                    const offset = 80;
+                    const bodyRect = document.body.getBoundingClientRect().top;
+                    const elementRect = el.getBoundingClientRect().top;
+                    const elementPosition = elementRect - bodyRect;
+                    const offsetPosition = elementPosition - offset;
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
+                style={{ cursor: 'pointer' }}
+              >
                 <div className="workflow-icon-wrapper">
                   {step.icon}
                 </div>

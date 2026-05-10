@@ -13,7 +13,7 @@ export default function FinalOutputSection() {
   };
 
   return (
-    <section className="final-output-section">
+    <section id="step-6" className="final-output-section">
       <div className="container">
         <div className="label">6. QUALITY CONTROL (QC)</div>
         <h2 className="section-title">Final QC Validation</h2>
@@ -33,9 +33,9 @@ export default function FinalOutputSection() {
               setSliderPos(percent);
             }}
           >
-            <img className="img-after" src="/final.png" alt="Final Retouched Image" />
-            <div className="img-before-wrapper" style={{ width: `${sliderPos}%` }}>
-              <img className="img-before" src="/hero.png" alt="Raw AI Output Image" />
+            <img className="img-after" src="/UpScaled-Final-image.jpg" alt="Final Retouched Image" />
+            <div className="img-before-wrapper" style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}>
+              <img className="img-before" src="/Before-AI-Raw_Image.png" alt="Raw AI Output Image" />
             </div>
             <div className="slider-handle" style={{ left: `${sliderPos}%` }}>
               <div className="slider-line"></div>

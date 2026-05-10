@@ -5,9 +5,9 @@ import ToolStack from './ToolStack';
 
 export default function QcSection() {
   return (
-    <section className="qc-section">
+    <section id="step-4" className="qc-section">
       <div className="container">
-        <div className="label" style={{ color: '#E63946' }}>4. ARTIFACT / ISSUE DETECTION</div>
+        <div className="label">4. QUALITY ANALYSIS</div>
         <ToolStack
           theme="light"
           tools={[
@@ -16,23 +16,15 @@ export default function QcSection() {
           ]}
           reason="Multimodal analysis for detecting visual anomalies at scale"
         />
-        <h2 className="section-title">Artifact Detection Using AI</h2>
+        <h2 className="section-title">AI-Assisted Quality Review</h2>
         <p className="section-desc">
-          Once the first AI output is generated, a dedicated AI-assisted Quality Control (QC) workflow is initiated. A specialized QC Prompt is generated to evaluate realism, lighting, proportions, and artifacts.
+          Once the first AI output is generated, an AI-assisted quality analysis workflow is initiated to identify high-level visual inconsistencies such as spatial imbalance, proportion issues, lighting irregularities, and potential generation artifacts. <strong style={{ fontWeight: 800, color: 'var(--accent-navy)' }}>The output is then manually reviewed in detail </strong> to evaluate <strong style={{ fontWeight: 800, color: 'var(--accent-navy)' }}>realism, product accuracy, material behavior, composition, and editorial-quality standards</strong> before proceeding to refinement or rework.
         </p>
 
         <div className="qc-layout">
           <div className="qc-image-panel">
             <div className="img-container qc-frame">
               <img src="/qc-mattress.jpg" alt="QC Annotated Mattress Scene Review" />
-            </div>
-
-            <div className="qc-workflow">
-              <span>First AI Output</span>
-              <span className="arrow">→</span>
-              <span>QC Prompt</span>
-              <span className="arrow">→</span>
-              <span className="rework">Artifact Detection</span>
             </div>
           </div>
 

@@ -4,7 +4,7 @@ import { PenTool, GitMerge, Eraser, Brush } from 'lucide-react';
 
 export default function RetouchSection() {
   return (
-    <section className="retouch-section dark-section">
+    <section id="step-5" className="retouch-section dark-section">
       <div className="container">
         <div className="label" style={{ color: '#C5A880' }}>5. MANUAL / AI FIX & RETOUCH</div>
         <h2 className="section-title">Manual & AI Retouching</h2>
@@ -19,7 +19,7 @@ export default function RetouchSection() {
               <p>This hybrid approach ensures higher production efficiency, reduced regeneration dependency, and premium-quality visual consistency.</p>
               
               <div className="logic-flow">
-                <div className="logic-node">Detected Artifact</div>
+                <div className="logic-node">Issue Detection</div>
                 <div className="logic-line"></div>
                 <div className="logic-split">
                   <div className="logic-branch">

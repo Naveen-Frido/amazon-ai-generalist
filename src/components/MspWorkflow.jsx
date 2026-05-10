@@ -317,7 +317,7 @@ export default function MspWorkflow() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <section className="msp-section dark-section">
+    <section id="step-2" className="msp-section dark-section">
       <div className="container">
         <div className="label" style={{ color: '#C5A880' }}>2. BUILDING A MSP</div>
         <ToolStack

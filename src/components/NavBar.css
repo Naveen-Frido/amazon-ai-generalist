@@ -51,6 +51,36 @@
   color: var(--accent-gold);
 }
 
+.nav-tabs {
+  display: flex;
+  gap: 16px;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 4px;
+  border-radius: 100px;
+}
+
+.nav-tab-btn {
+  background: transparent;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-tab-btn:hover {
+  color: var(--accent-navy);
+}
+
+.nav-tab-btn.active {
+  background: #fff;
+  color: var(--accent-navy);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;

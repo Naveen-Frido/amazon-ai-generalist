@@ -5,14 +5,14 @@ import ToolStack from './ToolStack';
 
 export default function UpscalingSection() {
   return (
-    <section className="upscaling-section">
+    <section id="step-7" className="upscaling-section">
       <div className="container">
         <div className="label">7. UPSCALE &amp; FINAL DELIVERY</div>
         <ToolStack
           theme="light"
           tools={[
-            { name: 'Crystal Upscaler' },
-            { name: 'Clarity Upscaler' },
+            { name: 'Crystal Upscaler', url: 'https://replicate.com/philz1337x/crystal-upscaler' },
+            { name: 'Clarity Upscaler', url: 'https://github.com/philz1337x/clarity-upscaler' },
           ]}
           reason="More granular control over sharpness vs. softness than alternatives"
         />

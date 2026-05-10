@@ -1,0 +1,138 @@
+.work-samples-section {
+  padding: 80px 0;
+  background-color: var(--bg-light);
+  border-top: 1px solid var(--border-color);
+}
+
+.samples-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  margin-top: 48px;
+}
+
+.sample-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sample-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.sample-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  cursor: ew-resize;
+  user-select: none;
+  background: var(--bg-warm);
+}
+
+.sample-img-after,
+.sample-img-before-wrapper,
+.sample-img-before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sample-img-before-wrapper {
+  will-change: clip-path;
+  transform: translateZ(0);
+}
+
+.sample-img-before {
+  will-change: transform;
+}
+
+.sample-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #fff;
+  transform: translateX(-50%) translateZ(0);
+  will-change: left;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.sample-handle-line {
+  width: 100%;
+  height: 100%;
+}
+
+.sample-handle-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  color: var(--accent-navy);
+}
+
+.sample-label-badge {
+  position: absolute;
+  top: 16px;
+  padding: 4px 10px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.badge-before {
+  left: 16px;
+}
+
+.badge-after {
+  right: 16px;
+}
+
+.sample-content {
+  padding: 24px;
+}
+
+.sample-content h3 {
+  font-size: 1.2rem;
+  color: var(--accent-navy);
+  margin-bottom: 8px;
+}
+
+.sample-content p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .samples-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .samples-grid {
+    grid-template-columns: 1fr;
+  }
+}

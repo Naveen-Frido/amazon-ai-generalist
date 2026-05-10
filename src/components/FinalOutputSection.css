@@ -31,16 +31,17 @@
   top: 0;
   left: 0;
   height: 100%;
-  overflow: hidden;
+  width: 100%;
+  will-change: clip-path;
+  transform: translateZ(0);
 }
 
 .img-before {
   display: block;
-  width: 100vw; /* This needs to be absolute based on container, using object-fit cover is tricky */
-  min-width: 100%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: left top;
+  will-change: transform;
 }
 
 /* Fix for before image width */
@@ -50,7 +51,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  max-width: none;
 }
 
 .slider-handle {
@@ -59,7 +59,8 @@
   bottom: 0;
   width: 2px;
   background-color: #fff;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateZ(0);
+  will-change: left;
   z-index: 10;
   pointer-events: none;
 }

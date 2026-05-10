@@ -5,7 +5,7 @@ import ToolStack from './ToolStack';
 
 export default function AiOutputSection() {
   return (
-    <section className="ai-output-section">
+    <section id="step-3" className="ai-output-section">
       <div className="container">
         <div className="label">3. ACTION PROMPT &rarr; FIRST AI OUTPUT</div>
         <ToolStack
@@ -66,7 +66,7 @@ export default function AiOutputSection() {
               <Settings2 size={20} className="meta-icon" />
               <div className="meta-info">
                 <span>Pipeline Stage</span>
-                <strong>First-Pass Output</strong>
+                <strong>Raw AI Output</strong>
               </div>
             </div>
 
