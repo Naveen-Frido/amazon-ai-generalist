@@ -5,6 +5,8 @@ import { Award, TrendingUp, ShieldCheck, ShoppingCart } from 'lucide-react';
 export default function FinalOutputSection() {
   const [sliderPos, setSliderPos] = useState(50);
 
+  const [viewAngle, setViewAngle] = useState('main');
+
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
@@ -22,30 +24,46 @@ export default function FinalOutputSection() {
         </p>
 
         <div className="final-showcase">
-          <div 
-            className="comparison-slider" 
-            onMouseMove={handleMouseMove}
-            onTouchMove={(e) => {
-              const rect = e.currentTarget.getBoundingClientRect();
-              const touch = e.touches[0];
-              const x = Math.max(0, Math.min(touch.clientX - rect.left, rect.width));
-              const percent = Math.max(0, Math.min((x / rect.width) * 100, 100));
-              setSliderPos(percent);
-            }}
-          >
-            <img className="img-after" src="/UpScaled-Final-image.jpg" alt="Final Retouched Image" />
-            <div className="img-before-wrapper" style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}>
-              <img className="img-before" src="/Before-AI-Raw_Image.png" alt="Raw AI Output Image" />
-            </div>
-            <div className="slider-handle" style={{ left: `${sliderPos}%` }}>
-              <div className="slider-line"></div>
-              <div className="slider-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-              </div>
-            </div>
-            <div className="slider-label label-before">RAW AI</div>
-            <div className="slider-label label-after">FINAL QC</div>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '16px' }}>
+            <button 
+              onClick={() => setViewAngle(prev => prev === 'main' ? 'front' : 'main')}
+              className="view-angle-btn"
+            >
+              {viewAngle === 'main' ? 'View Other Angle' : 'Back to Main Angle'}
+            </button>
           </div>
+
+          {viewAngle === 'main' ? (
+            <div 
+              className="comparison-slider" 
+              onMouseMove={handleMouseMove}
+              onTouchMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const touch = e.touches[0];
+                const x = Math.max(0, Math.min(touch.clientX - rect.left, rect.width));
+                const percent = Math.max(0, Math.min((x / rect.width) * 100, 100));
+                setSliderPos(percent);
+              }}
+            >
+              <img className="img-after" src="/UpScaled-Final-image.jpg" alt="Final Retouched Image" />
+              <div className="img-before-wrapper" style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}>
+                <img className="img-before" src="/Before-AI-Raw_Image.png" alt="Raw AI Output Image" />
+              </div>
+              <div className="slider-handle" style={{ left: `${sliderPos}%` }}>
+                <div className="slider-line"></div>
+                <div className="slider-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </div>
+              </div>
+              <div className="slider-label label-before">RAW AI</div>
+              <div className="slider-label label-after">FINAL QC</div>
+            </div>
+          ) : (
+            <div className="comparison-slider" style={{ cursor: 'default' }}>
+              <img className="img-after" src="/Front-Angle-Shot 1.png" alt="Front Angle Shot" />
+              <div className="slider-label label-after">FRONT ANGLE</div>
+            </div>
+          )}
 
           <div className="achievement-cards">
             <div className="card achievement-card">

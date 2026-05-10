@@ -5,7 +5,48 @@
 .final-showcase {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 24px;
+}
+
+.view-angle-btn {
+  background: var(--accent-navy);
+  border: 1px solid var(--accent-navy);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 6px rgba(10, 25, 47, 0.15);
+  animation: callOutPulse 2s infinite ease-in-out;
+}
+
+@keyframes callOutPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(10, 25, 47, 0.5);
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    box-shadow: 0 0 20px 8px rgba(10, 25, 47, 0.2);
+    transform: scale(1.05) translateY(-3px);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(10, 25, 47, 0);
+    transform: scale(1) translateY(0);
+  }
+}
+
+.view-angle-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(10, 25, 47, 0.3);
+  animation: none; /* Stop pulsing when user interacts */
+}
+
+.view-angle-btn:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 4px rgba(10, 25, 47, 0.15);
 }
 
 .comparison-slider {
