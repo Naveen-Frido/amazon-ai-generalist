@@ -12,6 +12,7 @@ import UpscalingSection from './components/UpscalingSection';
 import WorkSamples from './components/WorkSamples';
 import KeyProjects from './components/KeyProjects';
 import TechStack from './components/TechStack';
+import AboutSection from './components/AboutSection';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -51,6 +52,7 @@ function App() {
 
         {currentPage === 'experience' && (
           <div style={{ paddingTop: '80px', minHeight: '80vh' }}>
+            <AboutSection />
             <KeyProjects />
             <TechStack />
           </div>
