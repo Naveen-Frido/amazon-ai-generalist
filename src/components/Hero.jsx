@@ -19,7 +19,7 @@ export default function Hero() {
         <div className="hero-metadata animate-fade-in">
           <span>PORTFOLIO</span>
           <span className="dot">•</span>
-          <span>AMAZON AI CONTENT GENERALIST</span>
+          <span>AI CONTENT GENERALIST</span>
         </div>
 
         <h1 className="hero-title animate-fade-in" style={{ animationDelay: '0.1s' }}>

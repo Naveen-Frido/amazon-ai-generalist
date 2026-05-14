@@ -16,7 +16,7 @@ export default function NavBar({ currentPage = 'home', setCurrentPage }) {
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <div className="logo" onClick={() => setCurrentPage?.('home')} style={{ cursor: 'pointer' }}>
-          <span className="logo-text">Amazon AI Generalist</span>
+          <span className="logo-text">AI Generalist</span>
         </div>
         
         {setCurrentPage && (

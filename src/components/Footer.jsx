@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container footer-container">
         <div className="footer-content">
           <div className="footer-brand">
-            <h3>Amazon AI Content Generalist</h3>
+            <h3>AI Content Generalist</h3>
             <p>Portfolio Case Study</p>
           </div>
           
